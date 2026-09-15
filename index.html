@@ -4,46 +4,8 @@
     <title>Travel Recommendation</title>
 </head>
 <body>
-     <h2>Search Destinations</h2>
 
-<input type="text" id="searchInput" placeholder="Enter beach">
-<button onclick="searchDestination()">Search</button>
-<button onclick="clearResults()">Clear</button>
-
-<div id="results"></div>
-
-<script>
-function searchDestination() {
-    let searchValue = document.getElementById("searchInput").value.toLowerCase();
-    let results = document.getElementById("results");
-
-    if (searchValue.includes("beach")) {
-        results.innerHTML = `
-            <h3>Maldives Beach</h3>
-            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=300" width="300">
-
-            <h3>Bondi Beach</h3>
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300" width="300">
-        `;
-    }
-    
-    else {
-        results.innerHTML = "<p>No recommendations found.</p>";
-    }
-}
-
-function clearResults() {
-    document.getElementById("searchInput").value = "";
-    document.getElementById("results").innerHTML = "";
-}
-</script>
-
-    <!DOCTYPE html>
-<html>
-<head>
-    <title>Travel Recommendation</title>
-</head>
-<body>
+    <h1>Travel Recommendation Website</h1>
 
     <nav>
         <a href="index.html">Home</a> |
@@ -58,22 +20,47 @@ function clearResults() {
 
     <hr>
 
-    <h1>Travel Recommendation Website</h1>
-
     <div id="results"></div>
 
     <script>
+
         function searchDestination() {
 
-            let keyword =
+            let searchValue =
                 document.getElementById("searchInput")
-                .value
-                .toLowerCase();
+                .value.toLowerCase();
 
             let results =
                 document.getElementById("results");
 
-            if (keyword.includes("temple")) {
+            if (searchValue.includes("beach")) {
+
+                results.innerHTML = `
+
+                <h2>Maldives Beach</h2>
+
+                <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=500"
+                     width="400">
+
+                <p>
+                Maldives Beach is famous for crystal-clear water
+                and luxurious island resorts.
+                </p>
+
+                <h2>Bondi Beach</h2>
+
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500"
+                     width="400">
+
+                <p>
+                Bondi Beach is one of Australia's most popular
+                beach destinations.
+                </p>
+
+                `;
+            }
+
+            else if (searchValue.includes("temple")) {
 
                 results.innerHTML = `
 
@@ -82,23 +69,55 @@ function clearResults() {
                 <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=500"
                      width="400">
 
-                <p>Golden Temple is one of the most visited
-                religious sites in India.</p>
+                <p>
+                Golden Temple is one of the most visited
+                religious sites in India.
+                </p>
 
                 <h2>Brihadeeswara Temple</h2>
 
                 <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500"
                      width="400">
 
-                <p>Brihadeeswara Temple is a famous temple
-                located in Tamil Nadu.</p>
+                <p>
+                Brihadeeswara Temple is a historic temple
+                located in Tamil Nadu.
+                </p>
 
                 `;
             }
+
+            else if (searchValue.includes("country")) {
+
+                results.innerHTML = `
+
+                <h2>India</h2>
+
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=500"
+                     width="400">
+
+                <p>
+                India is known for its diverse culture,
+                heritage, monuments, and cuisines.
+                </p>
+
+                <h2>Japan</h2>
+
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500"
+                     width="400">
+
+                <p>
+                Japan is famous for technology,
+                traditional temples, and beautiful landscapes.
+                </p>
+
+                `;
+            }
+
             else {
 
                 results.innerHTML =
-                "<p>No recommendations found.</p>";
+                "<h3>No recommendations found.</h3>";
             }
         }
 
@@ -107,31 +126,8 @@ function clearResults() {
             document.getElementById("searchInput").value = "";
             document.getElementById("results").innerHTML = "";
         }
+
     </script>
-
-</body>
-</html>
-
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About Us</a> |
-        <a href="contact.html">Contact Us</a>
-
-        <input type="text" id="searchInput" placeholder="Search destinations">
-
-        <button type="button">Search</button>
-        <button type="button">Clear</button>
-    </nav>
-
-    <hr>
-
-    <h1>Travel Recommendation Website</h1>
-
-    <p>
-        Welcome to our Travel Recommendation website.
-        Discover exciting places around the world.
-    </p>
-   
 
 </body>
 </html>
