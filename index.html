@@ -25,7 +25,19 @@ function searchDestination() {
             <h3>Bondi Beach</h3>
             <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300" width="300">
         `;
-    } else {
+    }
+    else if (searchValue.includes("country")) {
+    results.innerHTML = `
+        <h2>India</h2>
+        <img src="https://images.unsplash.com/photo-1524492412937-b2807400
+        <p>India is known for its rich culture, heritage, and diverse landscapes.</p>
+
+        <h2>Japan</h2>
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8=400
+        <p>Japan is famous for its technology, temples, and beautiful scenery.</p>
+    `;
+}
+    else {
         results.innerHTML = "<p>No recommendations found.</p>";
     }
 }
