@@ -24,6 +24,37 @@
         Welcome to our Travel Recommendation website.
         Discover exciting places around the world.
     </p>
+    <h2>Search Destinations</h2>
+
+<input type="text" id="searchInput" placeholder="Enter beach">
+<button onclick="searchDestination()">Search</button>
+<button onclick="clearResults()">Clear</button>
+
+<div id="results"></div>
+
+<script>
+function searchDestination() {
+    let searchValue = document.getElementById("searchInput").value.toLowerCase();
+    let results = document.getElementById("results");
+
+    if (searchValue.includes("beach")) {
+        results.innerHTML = `
+            <h3>Maldives Beach</h3>
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=300" width="300">
+
+            <h3>Bondi Beach</h3>
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300" width="300">
+        `;
+    } else {
+        results.innerHTML = "<p>No recommendations found.</p>";
+    }
+}
+
+function clearResults() {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("results").innerHTML = "";
+}
+</script>
 
 </body>
 </html>
