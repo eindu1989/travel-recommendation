@@ -36,6 +36,80 @@ function clearResults() {
 }
 </script>
 
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Recommendation</title>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About Us</a> |
+        <a href="contact.html">Contact Us</a>
+
+        <input type="text" id="searchInput" placeholder="Search destinations">
+
+        <button onclick="searchDestination()">Search</button>
+        <button onclick="clearResults()">Clear</button>
+    </nav>
+
+    <hr>
+
+    <h1>Travel Recommendation Website</h1>
+
+    <div id="results"></div>
+
+    <script>
+        function searchDestination() {
+
+            let keyword =
+                document.getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+            let results =
+                document.getElementById("results");
+
+            if (keyword.includes("temple")) {
+
+                results.innerHTML = `
+
+                <h2>Golden Temple</h2>
+
+                <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=500"
+                     width="400">
+
+                <p>Golden Temple is one of the most visited
+                religious sites in India.</p>
+
+                <h2>Brihadeeswara Temple</h2>
+
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500"
+                     width="400">
+
+                <p>Brihadeeswara Temple is a famous temple
+                located in Tamil Nadu.</p>
+
+                `;
+            }
+            else {
+
+                results.innerHTML =
+                "<p>No recommendations found.</p>";
+            }
+        }
+
+        function clearResults() {
+
+            document.getElementById("searchInput").value = "";
+            document.getElementById("results").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
+
     <nav>
         <a href="index.html">Home</a> |
         <a href="about.html">About Us</a> |
